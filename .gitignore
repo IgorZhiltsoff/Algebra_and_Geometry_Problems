@@ -2,3 +2,4 @@
 *.log
 *.gz
 source/*/*.pdf
+*~lock*

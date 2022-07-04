@@ -1,0 +1,41 @@
+\documentclass[a4paper, 12pt]{article}
+
+
+%%% Template
+\newcommand{\coursename}{Алгем (доп. семинар)}
+\newcommand{\coursedate}{UNDEFINED}
+\newcommand{\term}{UNDEFINED}
+
+
+%%% Lang support
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+
+
+%%% Problem environment
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{problem}{P}
+
+
+%%% Page format
+% space outline
+\usepackage{geometry}
+\geometry{top=25mm}
+\geometry{left=15mm}
+\geometry{right=15mm}
+\geometry{bottom=10mm}
+
+% indentation
+\usepackage{indentfirst}
+
+% header
+\usepackage{titleps}
+\newpagestyle{main}{
+	\setheadrule{0.4pt}
+	\sethead{\coursename, семестр \term}{}{ФПМИ МФТИ, \coursedate}
+}
+\pagestyle{main}
+
+
