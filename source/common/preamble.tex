@@ -49,6 +49,8 @@
 % mix inline and breakline in lists 
 % Borrowed from: https://tex.stackexchange.com/a/51089/222164
 \usepackage[inline]{enumitem}   
+\makeatletter
+% This command ignores the optional argument for itemize and enumerate lists
 \newcommand{\inlineitem}[1][]{%
 	\ifnum\enit@type=\tw@
 	{\descriptionlabel{#1}}
@@ -58,4 +60,6 @@
 	\refstepcounter{\@listctr}\fi
 	\quad\@itemlabel\hspace{\labelsep}%
 	\fi}
+\makeatother
+\parindent=0pt
 
