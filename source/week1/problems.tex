@@ -1,38 +1,147 @@
 \input{../common/preamble_termI}
 \usepackage{amsmath}
+\usepackage{mathtools}
 
 \begin{document}
 		{\heading{1. Матрицы}}
 	
 	\begin{problem}{
-		Вычислить:
+			Вычислить: \\
+			\centerline{
+				\begin{enumerate*}
+					\item \(
+					\begin{pmatrix}
+						1 & 0 & 0 & 0 \\
+						0 & 1 & 0 & 0 \\
+						0 & 0 & 1 & 0 \\
+						0 & 0 & 0 & 1 \\
+					\end{pmatrix}^N
+					\)
+					
+					\item \(
+					\begin{pmatrix}
+						0 & 1 & 0 & 0 \\
+						0 & 0 & 1 & 0 \\
+						0 & 0 & 0 & 1 \\
+						0 & 0 & 0 & 0 \\
+					\end{pmatrix}^N
+					\)
+					
+					\item \begin{math}
+						{\begin{pmatrix}
+								1 & 1 & 0 & 0 \\
+								0 & 1 & 1 & 0 \\
+								0 & 0 & 1 & 1 \\
+								0 & 0 & 0 & 1 \\
+							\end{pmatrix}^N}\end{math}
+					
+			\end{enumerate*}}
 	}\end{problem}
-	$$
-	\begin{pmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & 1 & 0 & 0 \\
-		0 & 0 & 1 & 0 \\
-		0 & 0 & 0 & 1 \\
-	\end{pmatrix}^N
-	$$
 	
-	$$
-	\begin{pmatrix}
-			0 & 1 & 0 & 0 \\
-			0 & 0 & 1 & 0 \\
-			0 & 0 & 0 & 1 \\
-			0 & 0 & 0 & 0 \\
-		\end{pmatrix}^N
-	$$
-	$$
-	\begin{pmatrix}
-		1 & 1 & 0 & 0 \\
-		0 & 1 & 1 & 0 \\
-		0 & 0 & 1 & 1 \\
-		0 & 0 & 0 & 1 \\
-	\end{pmatrix}^2
-	$$
-	
+	\begin{problem}{
+		Вычислить в зависимости от $N$: \\
+		\centerline{
+		\begin{enumerate*}
+			\item \(
+			\begin{pmatrix}
+				1 & 0 & 0 & 0 \\
+				0 & 1 & 0 & 0 \\
+				0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 \\
+			\end{pmatrix}^N
+			\)
+			
+			\item \(
+			\begin{pmatrix}
+				1 & 0 & 0 & 0 \\
+				0 & 2 & 0 & 0 \\
+				0 & 0 & 3 & 0 \\
+				0 & 0 & 0 & 4 \\
+			\end{pmatrix}^N
+			\)
+			
+			\item \(
+			\begin{pmatrix}
+				0 & 1 & 0 & 0 \\
+				-1 & 0 & 0 & 0 \\
+				0 & 0 & 0 & 1 \\
+				0 & 0 & -1 & 0 \\
+			\end{pmatrix}^N
+			\)
+			
+			\item \(
+			\begin{pmatrix}
+				0 & 1 & 0 & 0 \\
+				0 & 0 & 1 & 0 \\
+				0 & 0 & 0 & 1 \\
+				0 & 0 & 0 & 0 \\
+			\end{pmatrix}^N
+			\)
+			
+			\item \begin{math}
+			{\begin{pmatrix}
+				1 & 1 & 0 & 0 \\
+				0 & 1 & 1 & 0 \\
+				0 & 0 & 1 & 1 \\
+				0 & 0 & 0 & 1 \\
+			\end{pmatrix}^N}\end{math}
+		
+		\end{enumerate*}}
+	}\end{problem}
+	\begin{problem}{	
+		Докажите, что существует \textbf{единственная} матрица $E$ такая, что:
+			$$\forall A \ \ EA = A = AE$$
+	}\end{problem}
+	\begin{problem}{	
+			А верно ли утверждать следующее? ($\exists!$ означает "существует единственный")
+			$$\forall A \ \ \exists! E \ \ EA = A = AE$$
+	}\end{problem}
 
+	\begin{problem}{[K 18.1а] Решить систему уравнений:
+			$$\begin{dcases}
+				$$X + Y \hfill = \begin{pmatrix}
+					1 & 1 \\
+					0 & 1
+				\end{pmatrix}$$ \\
+				$$2X + 3Y \hfill = \begin{pmatrix}
+					1 & 0 \\
+					0 & 1
+				\end{pmatrix}$$
+			\end{dcases}$$
+	}\end{problem}
+	
+	\begin{problem}{	
+			Найти парочку матриц с действительными элементами, удовлетворяющих уравнению:
+				$$X^2 = -\begin{pmatrix}
+					1 & 0 \\
+					0 & 1
+				\end{pmatrix}$$
+	}\end{problem}
+	
+	\textbf{Откуда вообще взялось такое странное правило умножения матриц? На этот вопрос мы дадим ответ ближе к концу семестра, а пока посмотрим, в каких задачах его можно применить}
+	
+	\begin{problem}
+		В стране $N$ городов, некоторые из которых соединены дорогой (список пар соединённых дорогой городов дан). Предложите способ "быстро" посчитать количество способов доехать из города $1$ в город $N$ таких, что:
+		\begin{itemize} {
+			\item между 1 и $N$ было посещено ровно $K$ городов (необязательно различных или отличных от $1$ и $N$\footnote{Т.е. если мы хотим доехать из города 1 в город 3, суммарно посетив 5 городов, то вполне годится путь 13213 (если есть все требуемые дороги))}.
+			\item между $1$ и $N$ было посещено не более $K$ городов (с той же оговоркой).
+		}\end{itemize}
+		\textit{Работают ли предложенные алгоритмы в случае, если между какими-то двумя городами есть несколько дорог?}
+	\end{problem}
+
+	\begin{problem}{
+		Посчитайте количество нулей в матрицах: \\
+			\centerline{
+				$\underset{(100 \times 100)}{\begin{pmatrix}
+					1 & 1 & 0 & \cdots & 0 & 0 & 0 \\
+					0 & 1 & 1 & \cdots & 0 & 0 & 0 \\
+					\vdots & \vdots & \vdots  & \ddots & \vdots & \vdots & \vdots \\
+					0 & 0 & 0 & \cdots & 0 & 1 & 1 \\
+					0 & 0 & 0 & \cdots & 0 & 0 & 1 \\
+				\end{pmatrix}^{101}}$
+			}
+		\textit{Подумайте, как можно было бы посчитать элемент с координатами $i, j$ в этой матрице.}
+		
+	}\end{problem}
 
 \end{document}

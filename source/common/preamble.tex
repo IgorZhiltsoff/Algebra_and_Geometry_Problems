@@ -16,7 +16,7 @@
 %%% Problem environment
 \usepackage{amsthm}
 \theoremstyle{definition}
-\newtheorem{problem}{P}
+\newtheorem{problem}{}
 
 
 %%% Page format
@@ -43,4 +43,19 @@
 
 % line splitting (use \seqsplit)
 \usepackage{seqsplit}
+
+
+%%% Lists
+% mix inline and breakline in lists 
+% Borrowed from: https://tex.stackexchange.com/a/51089/222164
+\usepackage[inline]{enumitem}   
+\newcommand{\inlineitem}[1][]{%
+	\ifnum\enit@type=\tw@
+	{\descriptionlabel{#1}}
+	\hspace{\labelsep}%
+	\else
+	\ifnum\enit@type=\z@
+	\refstepcounter{\@listctr}\fi
+	\quad\@itemlabel\hspace{\labelsep}%
+	\fi}
 
