@@ -13,8 +13,13 @@
 \usepackage[russian,english]{babel}
 
 
+%%% Links
+\usepackage{hyperref}
+
+
 %%% Environments
 \usepackage{amsthm}
+\usepackage{todonotes}
 
 % Problem
 \theoremstyle{definition}
@@ -24,16 +29,18 @@
 \theoremstyle{definition}
 \newtheorem*{definition}{О}
 
+
 %%% Operations
 \newcommand{\tr}{\mathbf{tr}}
 \newcommand{\detbf}{\mathbf{det}}
+
 
 %%% Page format
 % space outline
 \usepackage{geometry}
 \geometry{top=25mm}
-\geometry{left=15mm}
-\geometry{right=15mm}
+\geometry{left=25mm}
+\geometry{right=25mm}
 \geometry{bottom=10mm}
 
 % indentation
@@ -72,4 +79,14 @@
 	\fi}
 \makeatother
 \parindent=0pt
+
+%labels
+\renewcommand{\labelitemii}{\labelitemi}
+
+
+%%$ Lines
+% signed macro (TeXBook, p105)
+\def\signed #1 (#2){{\unskip\nobreak\hfil\penalty50
+		\hskip2em\hbox{}\nobreak\hfil\sl#1\/ \rm(#2)
+		\parfillskip=0pt \finalhyphendemerits=0 \par}}
 
